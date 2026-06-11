@@ -14,8 +14,8 @@ until node -e "require('net').createConnection({host:'db',port:5432}).on('connec
 done
 
 npm install
-npx prisma migrate deploy || true
-npx prisma generate || true
+./node_modules/.bin/prisma migrate deploy || true
+./node_modules/.bin/prisma generate || true
 npm run db:seed || true
 
 exec "$@"
