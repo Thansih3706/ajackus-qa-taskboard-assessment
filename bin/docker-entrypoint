@@ -15,5 +15,6 @@ done
 
 npx prisma migrate deploy || true
 npx prisma generate || true
+npm run db:seed || true
 
 exec "$@"
