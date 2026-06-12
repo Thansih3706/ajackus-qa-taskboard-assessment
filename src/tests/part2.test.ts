@@ -67,7 +67,7 @@ describe("task access control", () => {
       },
       body: JSON.stringify({ title: "viewer create attempt" }),
     });
-    expect(res.status).toBe(401);
+    expect(res.status).toBe(403);
   });
 
   // Test C
@@ -81,5 +81,18 @@ describe("task access control", () => {
       body: JSON.stringify({ title: "member create — baseline" }),
     });
     expect(res.status).toBe(201);
+  });
+  // Test D
+  it("a non-memeber cannot update a task", async () => {
+    const linaToken = await login("dev@example.com");
+    const res = await fetch(`${BASE_URL}/api/tasks/${taskId}`, {
+      method: "PATCH",
+      headers: {
+        Authorization: `Bearer ${linaToken}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ title: "non-member update attempt" }),
+    });
+    expect(res.status).toBe(403);
   });
 });
