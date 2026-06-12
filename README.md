@@ -7,7 +7,7 @@ https://github.com/Thansih3706/ajackus-qa-taskboard-assessment.git
 ## Submission Artifacts
 
 * `BUGS.md` — Top 4 verified findings with reproduction steps and curl proof
-* `TEST_OUTPUT.md` — Part 2 test analysis and execution results
+* `TEST_OUTPUT_PART2.md` — Part 2 test analysis and execution results
 
 ## Part 2 Summary
 
